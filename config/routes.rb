@@ -1,7 +1,14 @@
 Mapmystyle::Application.routes.draw do
+
+	resources :users
+
+  	get "users/new"
+  
+
 	match '/contact', :to => 'pages#contact'
 	match '/about', :to => 'pages#about'
 	root :to => 'pages#home'
+	match '/signup', :to => 'users#new'
 	
 
   # The priority is based upon order of creation:

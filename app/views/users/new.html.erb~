@@ -1,0 +1,7 @@
+
+<h2>Yes, I would like early access!</h2>
+
+<p>Be one of the first to know when we launch!</p>
+
+
+<%= link_to 'Back', root_path %>

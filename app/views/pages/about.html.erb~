@@ -11,7 +11,7 @@
 
 <P> It was with these beliefs in mind that we have set out to build MapMyStyle - a guide to help you find you style north. </p>
 
-<p> Be one of the first to try out app: <%= link_to "Personalized Outfit", newstyle_path %></p>
+<p> Be one of the first to try out app: <%= link_to "Personalized Outfit", '#' %></p>
 
 <p> Or sign up so we can let you know when new things are coming!</p>
 <p><%= link_to "Sign up now!", signup_path, :class => "btn btn-primary btn-large" %> </p>
