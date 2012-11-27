@@ -11,7 +11,7 @@ describe "Users" do
   			fill_in "Email", :with => ""
   			fill_in "Password", :with => ""
   			fill_in "Password confirmation", :with => ""
-  			click_button
+  			click_button('Send')
   			response.should render_template('users/new')
   			response.should have_selector("div#error_explanation")
   		end

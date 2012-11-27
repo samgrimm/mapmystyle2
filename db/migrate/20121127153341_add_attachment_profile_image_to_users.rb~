@@ -1,0 +1,15 @@
+class AddAttachmentProfileImageToUsers < ActiveRecord::Migration
+  def self.up
+    change_table :users do |t|
+      	t.has_attached_file :profile_image
+      	t.add_column :users, :profile_image_file_name, :string
+		t.add_column :users, :profile_image_content_type, :string
+		t.add_column :users, :profile_image_file_size, :integer
+		t.add_column :users, :profile_image_updated_at, :datetime
+    end
+  end
+
+  def self.down
+    drop_attached_file :users, :profile_image
+  end
+end

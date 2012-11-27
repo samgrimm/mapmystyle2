@@ -2,11 +2,12 @@
  require 'digest'
 
 class User < ActiveRecord::Base
-  attr_accessor :password  
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessor :password 
+  attr_accessible :email, :name, :password, :password_confirmation, :profile_image
   
+  
+  	has_attached_file :profile_image, :styles => { :small => "150x150>" }
 
-  
   
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i   
   
@@ -20,6 +21,9 @@ class User < ActiveRecord::Base
   validates :password, :presence => true,
   							 :confirmation => true,
   							 :length => { :within => 6..40}
+  
+  
+  
   	
   	 before_save :encrypt_password  						 
   

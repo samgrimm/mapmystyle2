@@ -17,7 +17,8 @@
  	<%= f.input :email %> 
  	<%= f.input :password %>
  	<%= f.input :password_confirmation %>
- 	
+	<%= f.input :profile_image %> 	
+ 	<%= image_tag @user.profile_image.url(:small) %>	
  	<%= f.submit 'Update'%>
   <% end %>
   

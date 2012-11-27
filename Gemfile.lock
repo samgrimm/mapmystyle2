@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: c0c1f1ed1bce2fffca8afaa662df00f6100ba69a
+  specs:
+    paperclip (3.3.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.4.0)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -35,6 +46,7 @@ GEM
     autotest-growl (0.2.16)
     autotest-rails-pure (4.1.2)
     builder (3.0.4)
+    cocaine (0.4.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -174,6 +186,7 @@ DEPENDENCIES
   faker
   jquery-rails
   less-rails
+  paperclip!
   pg
   rails (= 3.2.8)
   rspec
