@@ -1,7 +1,12 @@
-<%= form_for(@user) do |f| %>
-	<div class="field" >
-		<% f.label :name %><br />
-		<% f.text_field :name %>
-	</div>
-	
-<% end %>
+<%= simple_form_for(@user, :html => {:class => 'form-vertical' }) do |f| %>
+  
+  
+		
+	<%= f.input :name %>
+ 	<%= f.input :email, :hint => "Don't worry, we won't share!" %> 
+ 	<%= f.input :password %>
+ 	<%= f.input :password_confirmation %>
+ 	
+ 	<%= f.submit 'Send'%>
+  <% end %>
+  

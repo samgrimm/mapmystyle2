@@ -3,5 +3,7 @@
 
 <p>Be one of the first to know when we launch!</p>
 
+<%= render 'form' %>
+<%= render 'shared/error_messages'%>
 
 <%= link_to 'Back', root_path %>
