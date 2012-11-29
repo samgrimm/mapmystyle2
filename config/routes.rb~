@@ -1,9 +1,17 @@
 Mapmystyle::Application.routes.draw do
 
-  get "sessions/new"
-
-	resources :users
-
+   resources :users, :authorizations
+	resources :sessions, :only => [:new, :create, :destroy]
+	
+	get   '/login', :to => 'sessions#new', :as => :signin
+	match '/auth/:provider/callback', :to => 'authorizations#create'
+	match '/auth/failure', :to => 'sessions#failure'
+	
+	
+	
+	match '/signup', :to => 'users#new'
+	match '/signin', :to => 'sessions#new'
+	match '/signout', :to => 'sessions#destroy'
   	get "users/new"
   
 

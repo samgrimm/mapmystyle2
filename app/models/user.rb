@@ -1,5 +1,6 @@
 
  require 'digest'
+ require 'omniauth'
 
 class User < ActiveRecord::Base
   attr_accessor :password 
@@ -7,6 +8,7 @@ class User < ActiveRecord::Base
   
   
   	has_attached_file :profile_image, :styles => { :small => "150x150>" }
+
 
   
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i   
@@ -41,6 +43,13 @@ class User < ActiveRecord::Base
   	user = find_by_id(id)
   	(user && user.salt == cookie_salt) ? user : nil
   end
+  
+def add_provider(auth_hash)
+  # Check if the provider already exists, so we don't add it twice
+  unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+    Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+  end
+end
   
 
 	private
