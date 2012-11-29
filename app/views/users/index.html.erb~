@@ -1,0 +1,11 @@
+<h1>All Users</h1>
+<% will_paginate %>
+<ul class="users">
+	<% @users.each do |user| %>
+	<li>
+	<%= link_to user.name, user %>
+	<%= image_tag user.profile_image.url(:small) %>	
+	</li>
+	<% end %>
+</ul>
+<% will_paginate %>

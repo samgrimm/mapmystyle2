@@ -1,0 +1,22 @@
+<% title "Sign In" %>
+
+<% if @authorization %>
+  <% unless @authorization.empty? %>
+    <p><strong>You can sign in to this account using:</strong></p>
+    <div class="authorization">
+      <% for authorization in @authorization %>
+        <div class="authorization">
+         
+          <div class="provider"><%= authorization.provider.titleize %></div>
+          <div class="uid"><%= authorization.uid %></div>
+          <%= link_to "X", authorization, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
+        </div>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+  <p><strong>Add another service to sign in with:</strong></p>
+<% else %>
+  <p><strong>Sign in through one of these services:</strong></p>
+<% end %>
+

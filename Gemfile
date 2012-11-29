@@ -9,6 +9,10 @@ gem 'sqlite3', :group => [:development, :test]
 
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'will_paginate' 
+
+
+gem 'omniauth-facebook'
 
 
 gem 'factory_girl_rails', :group => [:development, :test]
